@@ -14,22 +14,17 @@ import javax.swing.table.AbstractTableModel;
  */
 public class MyTableModel extends AbstractTableModel 
 {
-    private String[] columnNames = {"First Name",
-                        "Last Name",
-                        "Sport",
-                        "# of Years",
-                        "Vegetarian"};
+    private String[] columnNames = {"Prenom",
+                        "Nom",
+                        "# Cell",
+                        "# jours travaillés",
+                        "Contacter"};
     private Object[][] data = {
-    {"Kathy", "Smith",
-     "Snowboarding", new Integer(5), new Boolean(false)},
-    {"John", "Doe",
-     "Rowing", new Integer(3), new Boolean(true)},
-    {"Sue", "Black",
-     "Knitting", new Integer(2), new Boolean(false)},
-    {"Jane", "White",
-     "Speed reading", new Integer(20), new Boolean(true)},
-    {"Joe", "Brown",
-     "Pool", new Integer(10), new Boolean(false)}
+    {"Andres", "Osorio",
+     "5149192869", new Integer(5), new Boolean(false)},
+        {"Fred", "Hanna",
+     "5146999333", new Integer(5), new Boolean(false)}
+        
 };
 
     public int getColumnCount() {

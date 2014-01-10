@@ -21,10 +21,27 @@ public class SMSSender
     public static final String API_SECRET = "2ad8d871";
 
     public static final String SMS_FROM = "18163684022";
-    public static final String SMS_TO = "15149192869";
-    public static final String SMS_TEXT = "New app working!";
+    public static String SMS_TO = "";
+    public static String SMS_TEXT = "";
+    
+    private static SMSSender instance = null;
 
-    public static void main(String[] args) {
+    public SMSSender()
+    {
+        
+    }
+    
+    public static SMSSender getInstance() {
+      if(instance == null) {
+         instance = new SMSSender();
+      }
+      return instance;
+   }
+    
+    public void sendMessage(String to, String msg)
+    {
+        this.SMS_TO = "1" + to;
+        this.SMS_TEXT = msg;
 
         // Create a client for submitting to Nexmo
 

@@ -8,6 +8,7 @@ package listederappelsms;
 
 import javax.swing.JTable;
 import javax.swing.table.TableColumnModel;
+import listederappelsms.domain.SMSSender;
 
 /**
  *
@@ -16,6 +17,7 @@ import javax.swing.table.TableColumnModel;
 public class MainFrame extends javax.swing.JFrame {
     
     private MyTableModel tableModel;
+    private String MessagePredefinie = "Voici un message de test"; 
 
     /**
      * Creates new form MainFrame
@@ -108,6 +110,10 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+      for(int x = 0; x < tableModel.getRowCount(); x = x+1) 
+      {      
+            SMSSender.getInstance().sendMessage(tableModel.getValueAt(x, 2).toString(), MessagePredefinie);
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
